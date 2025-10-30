@@ -1,0 +1,275 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #f8f6ff 0%, #f4f1ff 100%);
+}
+
+
+/* ========== COMMON SECTION STYLES ========== */
+header, section, div {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+header h1, .about h2 {
+    animation: fadeZoom 1.2s ease-out;
+}
+.about {
+    animation: slideInLeft 1s ease forwards 0.2s;
+}
+#gallery {
+    animation: slideInLeft 1s ease forwards 0.4s;
+}
+#contact {
+    animation: slideInLeft 1s ease forwards 0.6s;
+}
+
+/* ========== HEADINGS ========== */
+h1 {
+    font-size: 40px;
+    line-height: 54px;
+}
+h2 {
+    font-size: 32px;
+    line-height: 44px;
+}
+p {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+/* ========== BUTTONS ========== */
+.button {
+    animation: pulseGlow 2s infinite;
+}
+a, button {
+    background-color: #e81c50;
+    display: block;
+    margin: 0 auto;
+    width: 170px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 20px;
+    line-height: 44px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover, button:hover {
+    background-color: #ceae0d;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* ========== HEADER ========== */
+header {
+    background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                      url('https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #333;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    margin-bottom: 60px;
+}
+header h1 {
+    color: #222;
+}
+header h1 span {
+    color: #e81c50;
+}
+header h3 {
+    color: #555;
+}
+
+/* ========== ABOUT ========== */
+.about p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ========== CONTACT FORM ========== */
+input, textarea {
+    display: block;
+    width: 320px;
+    padding: 10px;
+    margin: 0 auto 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.5s ease;
+}
+input:focus, textarea:focus {
+    outline: 0;
+    border-color: #e81c50;
+}
+textarea {
+    height: 100px;
+}
+#contact button {
+    border: none;
+    outline: 0;
+    margin-top: 25px;
+}
+
+/* ========== GALLERY SECTION ========== */
+#gallery {
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+#gallery h2 {
+    margin-bottom: 30px;
+    color: #e81c50;
+}
+.gallery-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.gallery-table td {
+    padding: 5px;
+    vertical-align: middle;
+}
+.gallery-table img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-table img:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 8px 25px rgba(232, 28, 80, 0.3);
+}
+
+/* ========== NEWSLETTER ========== */
+#newsletter {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+#newsletter table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+#newsletter input {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    transition: border-color 0.5s ease;
+}
+#newsletter input:focus {
+    outline: 0;
+    border-color: #e81c50;
+}
+#newsletter a {
+    display: inline-block;
+    margin-left: 10px;
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: #fafafa;
+    padding: 20px 0;
+}
+footer p {
+    font-size: 12px;
+    margin: 0;
+    color: #000;
+}
+
+/* ========== MEDIA SECTION ========== */
+#media {
+    background-color: #fdfdfd;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    margin-top: 40px;
+    text-align: center;
+}
+#media h2 {
+    color: #e81c50;
+    margin-bottom: 10px;
+}
+#media p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    animation: fadeInUp 1s ease;
+}
+.media-item {
+    max-width: 450px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 1s forwards;
+}
+.media-item:nth-child(1) { animation-delay: 0.2s; }
+.media-item:nth-child(2) { animation-delay: 0.4s; }
+.media-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.media-item h3 {
+    color: #e81c50;
+    margin-bottom: 10px;
+}
+audio, video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeZoom {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(232, 28, 80, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(232, 28, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(232, 28, 80, 0); }
+}
+
+/* ========== RESPONSIVE FIXES ========== */
+@media (max-width: 768px) {
+    header, section, div {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .media-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
