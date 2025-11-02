@@ -1,0 +1,203 @@
+html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9fb;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 90rem;
+  }
+  
+  /* Common color shape style */
+  .wrapper > div {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Color name text inside */
+  .wrapper > div::after {
+    content: attr(data-name);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+    white-space: nowrap;
+  }
+  
+  /* Hover effect */
+  .wrapper > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  
+  /* === ALL 140 HTML COLOR NAMES === */
+  #AliceBlue { background: AliceBlue; } #AliceBlue::after { content: "Alice Blue"; }
+  #AntiqueWhite { background: AntiqueWhite; } #AntiqueWhite::after { content: "Antique White"; }
+  #Aqua { background: Aqua; } #Aqua::after { content: "Aqua"; }
+  #Aquamarine { background: Aquamarine; } #Aquamarine::after { content: "Aquamarine"; }
+  #Azure { background: Azure; } #Azure::after { content: "Azure"; }
+  #Beige { background: Beige; } #Beige::after { content: "Beige"; }
+  #Bisque { background: Bisque; } #Bisque::after { content: "Bisque"; }
+  #Black { background: Black; } #Black::after { content: "Black"; color: white; }
+  #BlanchedAlmond { background: BlanchedAlmond; } #BlanchedAlmond::after { content: "Blanched Almond"; }
+  #Blue { background: Blue; } #Blue::after { content: "Blue"; color: white; }
+  #BlueViolet { background: BlueViolet; } #BlueViolet::after { content: "Blue Violet"; color: white; }
+  #Brown { background: Brown; } #Brown::after { content: "Brown"; color: white; }
+  #BurlyWood { background: BurlyWood; } #BurlyWood::after { content: "Burly Wood"; }
+  #CadetBlue { background: CadetBlue; } #CadetBlue::after { content: "Cadet Blue"; color: white; }
+  #Chartreuse { background: Chartreuse; } #Chartreuse::after { content: "Chartreuse"; }
+  #Chocolate { background: Chocolate; } #Chocolate::after { content: "Chocolate"; color: white; }
+  #Coral { background: Coral; } #Coral::after { content: "Coral"; }
+  #CornflowerBlue { background: CornflowerBlue; } #CornflowerBlue::after { content: "Cornflower Blue"; color: white; }
+  #Cornsilk { background: Cornsilk; } #Cornsilk::after { content: "Cornsilk"; }
+  #Crimson { background: Crimson; } #Crimson::after { content: "Crimson"; color: white; }
+  #Cyan { background: Cyan; } #Cyan::after { content: "Cyan"; }
+  #DarkBlue { background: DarkBlue; } #DarkBlue::after { content: "Dark Blue"; color: white; }
+  #DarkCyan { background: DarkCyan; } #DarkCyan::after { content: "Dark Cyan"; color: white; }
+  #DarkGoldenRod { background: DarkGoldenRod; } #DarkGoldenRod::after { content: "Dark Golden Rod"; color: white; }
+  #DarkGray { background: DarkGray; } #DarkGray::after { content: "Dark Gray"; }
+  #DarkGreen { background: DarkGreen; } #DarkGreen::after { content: "Dark Green"; color: white; }
+  #DarkKhaki { background: DarkKhaki; } #DarkKhaki::after { content: "Dark Khaki"; }
+  #DarkMagenta { background: DarkMagenta; } #DarkMagenta::after { content: "Dark Magenta"; color: white; }
+  #DarkOliveGreen { background: DarkOliveGreen; } #DarkOliveGreen::after { content: "Dark Olive Green"; color: white; }
+  #DarkOrange { background: DarkOrange; } #DarkOrange::after { content: "Dark Orange"; }
+  #DarkOrchid { background: DarkOrchid; } #DarkOrchid::after { content: "Dark Orchid"; color: white; }
+  #DarkRed { background: DarkRed; } #DarkRed::after { content: "Dark Red"; color: white; }
+  #DarkSalmon { background: DarkSalmon; } #DarkSalmon::after { content: "Dark Salmon"; }
+  #DarkSeaGreen { background: DarkSeaGreen; } #DarkSeaGreen::after { content: "Dark Sea Green"; }
+  #DarkSlateBlue { background: DarkSlateBlue; } #DarkSlateBlue::after { content: "Dark Slate Blue"; color: white; }
+  #DarkSlateGray { background: DarkSlateGray; } #DarkSlateGray::after { content: "Dark Slate Gray"; color: white; }
+  #DarkTurquoise { background: DarkTurquoise; } #DarkTurquoise::after { content: "Dark Turquoise"; }
+  #DarkViolet { background: DarkViolet; } #DarkViolet::after { content: "Dark Violet"; color: white; }
+  #DeepPink { background: DeepPink; } #DeepPink::after { content: "Deep Pink"; }
+  #DeepSkyBlue { background: DeepSkyBlue; } #DeepSkyBlue::after { content: "Deep Sky Blue"; color: white; }
+  #DimGray { background: DimGray; } #DimGray::after { content: "Dim Gray"; color: white; }
+  #DodgerBlue { background: DodgerBlue; } #DodgerBlue::after { content: "Dodger Blue"; color: white; }
+  #FireBrick { background: FireBrick; } #FireBrick::after { content: "Fire Brick"; color: white; }
+  #FloralWhite { background: FloralWhite; } #FloralWhite::after { content: "Floral White"; }
+  #ForestGreen { background: ForestGreen; } #ForestGreen::after { content: "Forest Green"; color: white; }
+  #Fuchsia { background: Fuchsia; } #Fuchsia::after { content: "Fuchsia"; color: white; }
+  #Gainsboro { background: Gainsboro; } #Gainsboro::after { content: "Gainsboro"; }
+  #GhostWhite { background: GhostWhite; } #GhostWhite::after { content: "Ghost White"; }
+  #Gold { background: Gold; } #Gold::after { content: "Gold"; }
+  #GoldenRod { background: GoldenRod; } #GoldenRod::after { content: "Golden Rod"; }
+  #Gray { background: Gray; } #Gray::after { content: "Gray"; color: white; }
+  #Green { background: Green; } #Green::after { content: "Green"; color: white; }
+  #GreenYellow { background: GreenYellow; } #GreenYellow::after { content: "Green Yellow"; }
+  #HoneyDew { background: HoneyDew; } #HoneyDew::after { content: "Honey Dew"; }
+  #HotPink { background: HotPink; } #HotPink::after { content: "Hot Pink"; }
+  #IndianRed { background: IndianRed; } #IndianRed::after { content: "Indian Red"; }
+  #Indigo { background: Indigo; } #Indigo::after { content: "Indigo"; color: white; }
+  #Ivory { background: Ivory; } #Ivory::after { content: "Ivory"; }
+  #Khaki { background: Khaki; } #Khaki::after { content: "Khaki"; }
+  #Lavender { background: Lavender; } #Lavender::after { content: "Lavender"; }
+  #LavenderBlush { background: LavenderBlush; } #LavenderBlush::after { content: "Lavender Blush"; }
+  #LawnGreen { background: LawnGreen; } #LawnGreen::after { content: "Lawn Green"; }
+  #LemonChiffon { background: LemonChiffon; } #LemonChiffon::after { content: "Lemon Chiffon"; }
+  #LightBlue { background: LightBlue; } #LightBlue::after { content: "Light Blue"; }
+  #LightCoral { background: LightCoral; } #LightCoral::after { content: "Light Coral"; }
+  #LightCyan { background: LightCyan; } #LightCyan::after { content: "Light Cyan"; }
+  #LightGoldenRodYellow { background: LightGoldenRodYellow; } #LightGoldenRodYellow::after { content: "Light Golden Rod Yellow"; }
+  #LightGray { background: LightGray; } #LightGray::after { content: "Light Gray"; }
+  #LightGreen { background: LightGreen; } #LightGreen::after { content: "Light Green"; }
+  #LightPink { background: LightPink; } #LightPink::after { content: "Light Pink"; }
+  #LightSalmon { background: LightSalmon; } #LightSalmon::after { content: "Light Salmon"; }
+  #LightSeaGreen { background: LightSeaGreen; } #LightSeaGreen::after { content: "Light Sea Green"; }
+  #LightSkyBlue { background: LightSkyBlue; } #LightSkyBlue::after { content: "Light Sky Blue"; }
+  #LightSlateGray { background: LightSlateGray; } #LightSlateGray::after { content: "Light Slate Gray"; }
+  #LightSteelBlue { background: LightSteelBlue; } #LightSteelBlue::after { content: "Light Steel Blue"; }
+  #LightYellow { background: LightYellow; } #LightYellow::after { content: "Light Yellow"; }
+  #Lime { background: Lime; } #Lime::after { content: "Lime"; }
+  #LimeGreen { background: LimeGreen; } #LimeGreen::after { content: "Lime Green"; }
+  #Linen { background: Linen; } #Linen::after { content: "Linen"; }
+  #Magenta { background: Magenta; } #Magenta::after { content: "Magenta"; color: white; }
+  #Maroon { background: Maroon; } #Maroon::after { content: "Maroon"; color: white; }
+  #MediumAquaMarine { background: MediumAquaMarine; } #MediumAquaMarine::after { content: "Medium Aqua Marine"; }
+  #MediumBlue { background: MediumBlue; } #MediumBlue::after { content: "Medium Blue"; color: white; }
+  #MediumOrchid { background: MediumOrchid; } #MediumOrchid::after { content: "Medium Orchid"; color: white; }
+  #MediumPurple { background: MediumPurple; } #MediumPurple::after { content: "Medium Purple"; color: white; }
+  #MediumSeaGreen { background: MediumSeaGreen; } #MediumSeaGreen::after { content: "Medium Sea Green"; color: white; }
+  #MediumSlateBlue { background: MediumSlateBlue; } #MediumSlateBlue::after { content: "Medium Slate Blue"; color: white; }
+  #MediumSpringGreen { background: MediumSpringGreen; } #MediumSpringGreen::after { content: "Medium Spring Green"; }
+  #MediumTurquoise { background: MediumTurquoise; } #MediumTurquoise::after { content: "Medium Turquoise"; }
+  #MediumVioletRed { background: MediumVioletRed; } #MediumVioletRed::after { content: "Medium Violet Red"; color: white; }
+  #MidnightBlue { background: MidnightBlue; } #MidnightBlue::after { content: "Midnight Blue"; color: white; }
+  #MintCream { background: MintCream; } #MintCream::after { content: "Mint Cream"; }
+  #MistyRose { background: MistyRose; } #MistyRose::after { content: "Misty Rose"; }
+  #Moccasin { background: Moccasin; } #Moccasin::after { content: "Moccasin"; }
+  #NavajoWhite { background: NavajoWhite; } #NavajoWhite::after { content: "Navajo White"; }
+  #Navy { background: Navy; } #Navy::after { content: "Navy"; color: white; }
+  #OldLace { background: OldLace; } #OldLace::after { content: "Old Lace"; }
+  #Olive { background: Olive; } #Olive::after { content: "Olive"; color: white; }
+  #OliveDrab { background: OliveDrab; } #OliveDrab::after { content: "Olive Drab"; color: white; }
+  #Orange { background: Orange; } #Orange::after { content: "Orange"; }
+  #OrangeRed { background: OrangeRed; } #OrangeRed::after { content: "Orange Red"; color: white; }
+  #Orchid { background: Orchid; } #Orchid::after { content: "Orchid"; }
+  #PaleGoldenRod { background: PaleGoldenRod; } #PaleGoldenRod::after { content: "Pale Golden Rod"; }
+  #PaleGreen { background: PaleGreen; } #PaleGreen::after { content: "Pale Green"; }
+  #PaleTurquoise { background: PaleTurquoise; } #PaleTurquoise::after { content: "Pale Turquoise"; }
+  #PaleVioletRed { background: PaleVioletRed; } #PaleVioletRed::after { content: "Pale Violet Red"; }
+  #PapayaWhip { background: PapayaWhip; } #PapayaWhip::after { content: "Papaya Whip"; }
+  #PeachPuff { background: PeachPuff; } #PeachPuff::after { content: "Peach Puff"; }
+  #Peru { background: Peru; } #Peru::after { content: "Peru"; color: white; }
+  #Pink { background: Pink; } #Pink::after { content: "Pink"; }
+  #Plum { background: Plum; } #Plum::after { content: "Plum"; }
+  #PowderBlue { background: PowderBlue; } #PowderBlue::after { content: "Powder Blue"; }
+  #Purple { background: Purple; } #Purple::after { content: "Purple"; color: white; }
+  #RebeccaPurple { background: RebeccaPurple; } #RebeccaPurple::after { content: "Rebecca Purple"; color: white; }
+  #Red { background: Red; } #Red::after { content: "Red"; color: white; }
+  #RosyBrown { background: RosyBrown; } #RosyBrown::after { content: "Rosy Brown"; }
+  #RoyalBlue { background: RoyalBlue; } #RoyalBlue::after { content: "Royal Blue"; color: white; }
+  #SaddleBrown { background: SaddleBrown; } #SaddleBrown::after { content: "Saddle Brown"; color: white; }
+  #Salmon { background: Salmon; } #Salmon::after { content: "Salmon"; }
+  #SandyBrown { background: SandyBrown; } #SandyBrown::after { content: "Sandy Brown"; }
+  #SeaGreen { background: SeaGreen; } #SeaGreen::after { content: "Sea Green"; color: white; }
+  #SeaShell { background: SeaShell; } #SeaShell::after { content: "Sea Shell"; }
+  #Sienna { background: Sienna; } #Sienna::after { content: "Sienna"; color: white; }
+  #Silver { background: Silver; } #Silver::after { content: "Silver"; }
+  #SkyBlue { background: SkyBlue; } #SkyBlue::after { content: "Sky Blue"; }
+  #SlateBlue { background: SlateBlue; } #SlateBlue::after { content: "Slate Blue"; color: white; }
+  #SlateGray { background: SlateGray; } #SlateGray::after { content: "Slate Gray"; color: white; }
+  #Snow { background: Snow; } #Snow::after { content: "Snow"; }
+  #SpringGreen { background: SpringGreen; } #SpringGreen::after { content: "Spring Green"; }
+  #SteelBlue { background: SteelBlue; } #SteelBlue::after { content: "Steel Blue"; color: white; }
+  #Tan { background: Tan; } #Tan::after { content: "Tan"; }
+  #Teal { background: Teal; } #Teal::after { content: "Teal"; color: white; }
+  #Thistle { background: Thistle; } #Thistle::after { content: "Thistle"; }
+  #Tomato { background: Tomato; } #Tomato::after { content: "Tomato"; }
+  #Turquoise { background: Turquoise; } #Turquoise::after { content: "Turquoise"; }
+  #Violet { background: Violet; } #Violet::after { content: "Violet"; }
+  #Wheat { background: Wheat; } #Wheat::after { content: "Wheat"; }
+  #White { background: White; } #White::after { content: "White"; }
+  #WhiteSmoke { background: WhiteSmoke; } #WhiteSmoke::after { content: "White Smoke"; }
+  #Yellow { background: Yellow; } #Yellow::after { content: "Yellow"; }
+  #YellowGreen { background: YellowGreen; } #YellowGreen::after { content: "Yellow Green"; }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .wrapper > div {
+      width: 6rem;
+      height: 2.5rem;
+    }
+  }
+  

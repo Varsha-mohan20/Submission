@@ -116,6 +116,154 @@ textarea {
     margin-top: 25px;
 }
 
+/* ========== SKILLS SECTION ========== */
+.skills {
+    padding: 60px 0 25px;
+    background: linear-gradient(180deg, #fdfbff, #f3eeff);
+    text-align: center;
+  }
+  
+  /* Wrapper: all boxes in one row with equal height */
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto 5px; /* ✅ reduced even more space below */
+  }
+  
+  /* Each skill category box */
+  .actualcontent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #e3d7ff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 260px;
+  }
+  
+  /* Equal height enforcement */
+  .wrapper > .actualcontent {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper > .actualcontent h3 {
+    flex-shrink: 0;
+  }
+  .wrapper > .actualcontent ul {
+    flex-grow: 1;
+  }
+  
+  /* Headings with * and ** */
+  .actualcontent:nth-child(1) h3::before,
+  .actualcontent:nth-child(2) h3::before {
+    content: "* ";
+    color: #e81c50;
+    font-weight: bold;
+  }
+  .actualcontent:nth-child(3) h3::before {
+    content: "** ";
+    color: #e81c50;
+    font-weight: bold;
+  }
+  
+  .actualcontent h3 {
+    color: #e81c50;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Skill list styling */
+  .actualcontent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  
+  /* Checkmark before each skill */
+  .actualcontent ul li::before {
+    content: "✔ ";
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 6px;
+  }
+  
+  /* Skill items */
+  .actualcontent ul li {
+    background: #f8f6ff;
+    border: 1px solid #e3d7ff;
+    border-radius: 10px;
+    padding: 6px 12px;
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .actualcontent ul li:hover {
+    background: #e81c50;
+    color: #fff;
+    transform: translateX(3px);
+  }
+  .actualcontent ul li:hover::before {
+    color: #fff;
+  }
+  
+  /* ========== MORE WORK SECTION ========== */
+  .more-work {
+    text-align: center;
+    margin-top: 5px; /* ✅ even less gap from wrapper */
+    animation: fadeInUp 1s ease;
+  }
+  
+  .more-work p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  /* GitHub Button */
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #24292e;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .github-btn:hover {
+    background-color: #e81c50;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(232, 28, 80, 0.3);
+  }
+  
+  .github-btn i {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  
+
+
 /* ========== GALLERY SECTION ========== */
 #gallery {
     background-color: #fff;
@@ -183,6 +331,34 @@ textarea {
     width: auto;
     padding: 10px 20px;
 }
+
+/* ===== POWERED BY GITHUB SECTION ===== */
+.powered {
+    text-align: center;
+    padding: 35px 0 25px;
+    background: #f7f4ff; /* light lavender background */
+    border-top: 1px solid #e3d7ff; /* subtle separation line */
+    animation: fadeInUp 1s ease;
+}
+
+.powered p {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.powered i {
+    font-size: 40px;
+    color: #24292e;
+    transition: all 0.3s ease;
+}
+
+.powered i:hover {
+    color: #e81c50;
+    transform: scale(1.1);
+}
+
 
 /* ========== FOOTER ========== */
 footer {
