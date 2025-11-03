@@ -186,6 +186,21 @@ html {
   .actualcontent ul li:hover::before {
     color: #fff;
   }
+
+  /* Add * before Java and .NET */
+  .actualcontent h3::before {
+    content: "* ";
+    color: #e81c50;
+    font-weight: bold;
+  }
+
+  /* Add ** before DevOps only */
+  .actualcontent:nth-of-type(3) h3::before {
+    content: "** ";
+    color: #e81c50;
+    font-weight: bold;
+  }
+
   
   /* More Work */
   .more-work {
