@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Every 2 Seconds</title>
+  </head>
+  <body>
+    <button id="timeButton">Loading...</button>
+
+    <script>
+      const showTime = () => {
+        const now = new Date();
+        const time = now.toLocaleString(); // shows HH:MM:SS
+        document.getElementById("timeButton").textContent = time;
+        setTimeout(() => showTime(), 1000);
+      };
+
+      showTime(); // start
+    </script>
+  </body>
+</html>
