@@ -1,6 +1,6 @@
 import { add, PI } from './modules/math.js';
 import { capitalize } from './modules/string.js';
-
-console.log(`Sum: ${add(2,3)}`);
+console.log(`Sum: ${add(2, 3)}`);
 console.log(`PI: ${PI}`);
 console.log(`Capatilized word: ${capitalize('hello Varsha')}`);
+//# sourceMappingURL=index.js.map
