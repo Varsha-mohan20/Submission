@@ -25,8 +25,7 @@ const obj: { par: number; par2?: number } = { par: 3 };
 console.log(obj);
 
 try {
-  // @ts-expect-error: Trying to reassign a const
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const objTest = obj;
   throw new Error("Cannot reassign a const object");
 } catch (err) {
@@ -170,19 +169,19 @@ console.log(yoda.name, "is a Jedi?", yoda instanceof Jedi);
 console.log("***************************************************");
 console.log("Arrays & Iterators");
 
-const arr = ["a", "b", "c"];
+const Arrays = ["a", "b", "c"];
 console.log("for...of:");
-for (const i of arr) console.log(i);
+for (const i of Arrays) console.log(i);
 
 console.log("forEach:");
-arr.forEach(x => console.log(x));
+Arrays.forEach(x => console.log(x));
 
 const ratings = [5, 4, 5];
-let sum = 0;
+let sums = 0;
 const syncSum = (a: number, b: number) => a + b;
 
-ratings.forEach(r => (sum = syncSum(sum, r)));
-console.log("Sum:", sum);
+ratings.forEach(r => (sums = syncSum(sums, r)));
+console.log("Sum:", sums);
 
 console.log([...Array.from("abcd")]);
 console.log("***************************************************");
@@ -206,16 +205,16 @@ console.log("Final return value:", result.value);
 console.log("***************************************************");
 console.log("Arrow Functions");
 
-const reverse = ([x, ...y]: any[]): any[] =>
-  y.length > 0 ? [...reverse(y), x] : [x];
-console.log(reverse([1, 2, 3, 4, 5, 6]));
+const funReverse = ([x, ...y]: any[]): any[] =>
+  y.length > 0 ? [...funReverse(y), x] : [x];
+console.log(funReverse([1, 2, 3, 4, 5, 6]));
 
 function* squares(n: number) {
   for (let i = 1; i < n; i++) yield Math.pow(i, 2);
 }
 
 console.log([...squares(6)]);
-console.log("Reverse of a number:", reverse(("57" as any).split("")));
+console.log("Reverse of a number:", funReverse(("57" as any).split("")));
 
 console.log("***************************************************");
 console.log("End of demo");
