@@ -1,0 +1,13 @@
+# Ignore dependencies
+node_modules/
+
+# Ignore build outputs
+build/
+dist/
+coverage/
+
+# Ignore logs or temporary files
+*.log
+
+# Ignore compiled JS or server output (optional)
+public/

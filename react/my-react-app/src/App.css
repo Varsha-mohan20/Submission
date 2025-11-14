@@ -104,6 +104,41 @@ div#test img{
   text-align: center
 }
 
+nav {
+  background-color: #282c34;
+  padding: 15px 0;
+  text-align: left;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: 97%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 12px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #61dafb;
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: #61dafb;
+  font-weight: 600;
+}
+
+nav span {
+  color: #999;
+  font-weight: bold;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

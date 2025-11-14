@@ -1,0 +1,107 @@
+.form-container {
+    /* background-color: #fafafa; */
+    background-color: #ede9e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 350px;
+    margin: 15px auto;
+  }
+  
+  .form-container input {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+
+/* General form styling */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px 40px;
+    width: 350px;
+    margin: 30px auto;
+    transition: all 0.3s ease;
+  }
+  
+  .form-wrapper:hover {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Inputs */
+  .form-wrapper input[type="text"],
+  .form-wrapper input[type="email"],
+  .form-wrapper input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-wrapper input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Color picker */
+  .form-wrapper input[type="color"] {
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  
+  /* Buttons */
+  .form-wrapper button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .form-wrapper button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .form-wrapper button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-wrapper button[type="button"] {
+    background-color: #ccc;
+    margin-left: 10px;
+  }
+  
+  .form-wrapper button[type="button"]:hover {
+    background-color: #999;
+  }
+  
+  /* Child display */
+  .data-display {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    width: 340px;
+    text-align: left;
+    font-family: monospace;
+  }
+  
+  .data-display p {
+    color: #444;
+  }
+  
