@@ -225,6 +225,7 @@ import AboutUs from "./pages/AboutUs";
 import Plans from "./pages/Plans";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function AppWrapper() {
   const { theme } = useTheme();
@@ -241,10 +242,10 @@ function AppWrapper() {
 
         <div className="page-content">
           <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/home" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
-            
+
             <Route path="/about" element={<AboutUs />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/faq" element={<FAQ />} />
@@ -284,7 +285,7 @@ function AppWrapper() {
               }
             />
 
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 
