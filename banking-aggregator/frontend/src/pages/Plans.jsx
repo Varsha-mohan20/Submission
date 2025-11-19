@@ -74,9 +74,9 @@ const Plans = () => {
 
       <Grid container spacing={3}>
         {plans.map((plan, i) => (
-          <Grid item xs={12} sm={6} md={4} key={i}>
-            <Card sx={{ textAlign: "center", p: 2, borderRadius: 3 }}>
-              <CardContent>
+          <Grid item xs={12} sm={6} md={4} key={i} sx={{ display: "flex" }}>
+            <Card sx={{ textAlign: "center", p: 2, borderRadius: 3, flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 300 }}>
+              <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="h5">{plan.title}</Typography>
                 <Typography variant="h6" sx={{ mt: 1 }}>{plan.price}</Typography>
 
@@ -85,9 +85,11 @@ const Plans = () => {
                     <Typography key={idx} variant="body2">• {f}</Typography>
                   ))}
                 </Box>
-
-                <Button variant="contained" sx={{ mt: 2 }}>Choose Plan</Button>
               </CardContent>
+
+              <Box sx={{ mt: 2 }}>
+                <Button variant="contained" fullWidth>Choose Plan</Button>
+              </Box>
             </Card>
           </Grid>
         ))}

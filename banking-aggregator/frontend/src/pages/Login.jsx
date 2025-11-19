@@ -48,11 +48,25 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("/login", { email, password });
-      const user = res.data;
+      const res = await axios.post("/Auth/login", { email, password }, {
+        headers: { "Content-Type": "application/json" }
+      });
+  
+      const { token, refreshToken, user } = res.data;
+  
+      // Save token for future API calls
+      localStorage.setItem("authToken", token);
+      localStorage.setItem("refreshToken", refreshToken);
+  
+      // Call your login function with user details
       login(user);
-      if (user.roleId === 4) navigate("/manage-users");
-      else navigate("/accounts");
+  
+      // Navigate based on role
+      if (user.roleId === 4) {
+        navigate("/manage-users");
+      } else {
+        navigate("/accounts");
+      }
     } catch (err) {
       setSnackbar({
         open: true,
@@ -73,7 +87,7 @@ export default function Login() {
     }
 
     try {
-      const res = await axios.get("/validate-email", { params: { email } });
+      const res = await axios.get("/Auth/validate-email", { params: { email } });
       const userExists = res.data.exists;
 
       setEmailValidated(userExists);
@@ -129,7 +143,7 @@ export default function Login() {
         poA_Details: formData.poA_Details || "",
       };
 
-      const res = await axios.post("/register", payload);
+      const res = await axios.post("/Auth/register", payload);
       const user = res.data;
 
       login(user);
@@ -138,9 +152,8 @@ export default function Login() {
         message: "User registration complete",
         severity: "success",
       });
-
-      if (user.roleId === 4) navigate("/manage-users");
-      else navigate("/login");
+      setTab(0);
+      setFormData({});
     } catch (err) {
       setSnackbar({
         open: true,

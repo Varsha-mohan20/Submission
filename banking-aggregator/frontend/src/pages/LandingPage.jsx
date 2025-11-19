@@ -1,36 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Grid, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, Typography } from "@mui/material";
 import FeatureCard from "../components/Card";
+import axios from "../api/Authapi"; // axios instance with baseURL
 
-// Feature definitions
 const features = [
-  { title: "Savings Account", description: "Open and manage your savings account.", type: "account", minBalance: 1000 },
-  { title: "Current Account", description: "Business-friendly current account.", type: "account", minBalance: 5000 },
+  { title: "Savings Account", description: "Open and manage your savings account.", type: "account" },
+  { title: "Current Account", description: "Business-friendly current account.", type: "account" },
   { title: "Loans", description: "Personal and home loans.", type: "loan" },
   { title: "Investments", description: "Mutual funds and fixed deposits.", type: "investment" },
 ];
 
 const LandingPage = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
-  const [formData, setFormData] = useState({ accountName: "", initialDeposit: "" });
+  const [formData, setFormData] = useState({
+    InitialDeposit: "",
+    BranchId: "",
+    CurrencyId: "",
+    LimitAmount: "",
+  });
+  const [userId, setUserId] = useState(null); // store logged-in user's ID
+
+  useEffect(() => {
+    // Get userId from localStorage or login context
+    const user = JSON.parse(localStorage.getItem("user")); // assuming you store user info
+    if (user?.userId) setUserId(user.userId);
+  }, []);
 
   const handleOpen = (feature) => {
     setSelectedFeature(feature);
-    if (feature.type === "account") {
-      setFormData({ accountName: feature.title, initialDeposit: feature.minBalance || 0 });
-    } else {
-      setFormData({});
-    }
+    setFormData({
+      InitialDeposit: "",
+      BranchId: "",
+      CurrencyId: "",
+      LimitAmount: "",
+    });
   };
 
   const handleClose = () => {
     setSelectedFeature(null);
-    setFormData({ accountName: "", initialDeposit: "" });
+    setFormData({
+      InitialDeposit: "",
+      BranchId: "",
+      CurrencyId: "",
+      LimitAmount: "",
+    });
   };
 
-  const handleSubmit = () => {
-    alert(`Submitted for ${selectedFeature.title} with data: ${JSON.stringify(formData)}`);
-    handleClose();
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+  const handleSubmit = async () => {
+    try {
+      const token = localStorage.getItem("authToken");
+
+      const payload = {
+        InitialDeposit: parseFloat(formData.InitialDeposit),
+        UserId: userId, // use logged-in user's ID
+        BranchId: parseInt(formData.BranchId),
+        CurrencyId: parseInt(formData.CurrencyId),
+        LimitAmount: 50000,
+      };
+
+      const res = await axios.post("/Account/create", payload, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      alert(res.data.message);
+      handleClose();
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data || "Failed to create account");
+    }
   };
 
   return (
@@ -46,30 +87,60 @@ const LandingPage = () => {
           </Grid>
         ))}
       </Grid>
+      
 
-      {/* Modal for feature actions */}
       <Dialog open={!!selectedFeature} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>{selectedFeature?.title}</DialogTitle>
         <DialogContent dividers>
-          {selectedFeature?.type === "account" && (
+        {selectedFeature?.type === "account" && (
             <>
-              <TextField
+                <TextField
                 fullWidth
-                label="Account Name"
+                name="UserId"
+                label="User ID"
+                type="number"
                 margin="normal"
-                value={formData.accountName}
-                onChange={(e) => setFormData({ ...formData, accountName: e.target.value })}
-              />
-              <TextField
+                value={userId || ""}
+                disabled
+                />
+                <TextField
                 fullWidth
+                name="InitialDeposit"
                 label="Initial Deposit"
                 type="number"
                 margin="normal"
-                value={formData.initialDeposit}
-                onChange={(e) => setFormData({ ...formData, initialDeposit: e.target.value })}
-              />
+                value={formData.InitialDeposit}
+                onChange={(e) => setFormData({ ...formData, InitialDeposit: e.target.value })}
+                />
+                <TextField
+                fullWidth
+                name="BranchId"
+                label="Branch ID"
+                type="number"
+                margin="normal"
+                value={formData.BranchId}
+                onChange={(e) => setFormData({ ...formData, BranchId: e.target.value })}
+                />
+                <TextField
+                fullWidth
+                name="CurrencyId"
+                label="Currency ID"
+                type="number"
+                margin="normal"
+                value={formData.CurrencyId}
+                onChange={(e) => setFormData({ ...formData, CurrencyId: e.target.value })}
+                />
+                <TextField
+                fullWidth
+                name="LimitAmount"
+                label="Limit Amount"
+                type="number"
+                margin="normal"
+                value={formData.LimitAmount || 50000} // hardcoded default
+                disabled
+                />
             </>
-          )}
+            )}
           {selectedFeature?.type === "loan" && (
             <Typography>Loan application form will appear here.</Typography>
           )}

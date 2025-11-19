@@ -241,9 +241,10 @@ function AppWrapper() {
 
         <div className="page-content">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
-
+            
             <Route path="/about" element={<AboutUs />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/faq" element={<FAQ />} />
